@@ -2,6 +2,7 @@ package com.demo.testing.mockito.case1;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -28,9 +29,9 @@ public class CalcService2Test {
 
         int num1 = 11;
         int num2 = 12;
-        int expected = 23;
+        int expected = 46;
 
-        doReturn(expected).when(addService).add(num1, num2);
+        doReturn(num1 + num2).when(addService).add(num1, num2);
 
         // Act (When)
         int actual = calcService.calc(num1, num2);

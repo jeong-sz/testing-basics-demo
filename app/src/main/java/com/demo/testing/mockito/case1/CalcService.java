@@ -9,6 +9,6 @@ public class CalcService {
     }
 
     public int calc(int a, int b) {
-        return addService.add(a, b);
+        return addService.add(a, b) * 2;
     }
 }

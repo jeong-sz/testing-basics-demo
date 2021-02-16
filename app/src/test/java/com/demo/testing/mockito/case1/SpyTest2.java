@@ -1,6 +1,9 @@
 package com.demo.testing.mockito.case1;
 
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,13 +12,19 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
 
-public class SpyTest {
+public class SpyTest2 {
+
+    @Spy
+    List<String> listSpy = new ArrayList<>();
+
+    @Before
+    public void init() {
+        MockitoAnnotations.openMocks(this);
+    }
 
     @Test
     public void testMethod() {
         // Arrange (Given)
-        List<String> list = new ArrayList<>();
-        List<String> listSpy = spy(list);
 
         // Act (When)
         listSpy.add("first-element");

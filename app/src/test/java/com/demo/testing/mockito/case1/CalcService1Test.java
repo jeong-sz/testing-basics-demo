@@ -17,9 +17,9 @@ public class CalcService1Test {
 
         int num1 = 11;
         int num2 = 12;
-        int expected = 23;
+        int expected = 46;
 
-        when(addService.add(num1, num2)).thenReturn(expected);
+        when(addService.add(num1, num2)).thenReturn(num1 + num2);
 
         // Act (When)
         int actual = calcService.calc(num1, num2);

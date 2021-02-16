@@ -7,6 +7,7 @@ import java.util.List;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 
 public class VerifyInteractionTest {
 
@@ -28,5 +29,6 @@ public class VerifyInteractionTest {
         verify(mockedList).add("second-element");
         verify(mockedList, times(2)).add("third-element");
         verify(mockedList).clear();
+        verifyNoMoreInteractions(mockedList);
     }
 }
